@@ -1,1 +1,16 @@
-Succes!
+<section class="homepage-header">
+  <h1>{{ dummyData.homepageHeader.title }}</h1>
+  <p>{{ dummyData.homepageHeader.description }}</p>
+
+  {% include 'partials/button.liquid', href: '/meer-info', text: 'Meer info', variant: 'secondary' %}
+</section>
+
+<h1>FDND Links</h1>
+
+<ul>
+  {% for link in links %}
+    <li>
+      {% include 'partials/link-card.liquid', link: link %}
+    </li>
+  {% endfor %}
+</ul>

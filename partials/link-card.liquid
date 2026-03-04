@@ -1,0 +1,19 @@
+
+
+<div class="link-card">
+  <a href="{{ link.url }}">{{ link.title }}</a>
+  <p>
+    Submitted by {% include 'partials/email.liquid', email: link.email %}
+  </p>
+  <p>
+    Submitted on {{ link.date_created | date: '%d-%m-%Y %H:%M' }}
+  </p>
+  <p>
+    Votes <sup>{{ link.votes.size }}</sup>
+  </p>
+  {% for vote in link.votes %}
+  <p>
+    {% include 'partials/email.liquid', email: vote.email %}
+  </p>
+  {% endfor %}
+</div>

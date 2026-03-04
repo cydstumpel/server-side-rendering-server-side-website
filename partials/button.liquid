@@ -1,0 +1,21 @@
+{% comment %} data: href, text, type?, variant?, icon? {% endcomment %}
+
+{% comment %} if type is not defined default to link {% endcomment %}
+{% if href != null %}
+  {% assign type = 'link' %}
+{% endif %}
+{% comment %} if variant is not defined default to primary {% endcomment %}
+{% if variant == null  %}
+  {% assign variant = 'primary' %}
+{% endif %}
+
+
+{% if type == 'link' %}
+  <a href="{{ href }}" class="button is-{{ variant }}">
+    {{ text }}
+  </a>
+{% else %}
+  <button class="button is-{{ variant }}" type="{{ type }}">
+    {{ text }}
+  </button>
+{% endif %}
