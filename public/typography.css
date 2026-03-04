@@ -1,0 +1,21 @@
+.medium-heading {
+  font-size: clamp(1.5rem, calc(50 * var(--vw)), 4rem);
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.small-heading {
+  font-size: clamp(1rem, calc(16 * var(--vw)), 2rem);
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.small-text {
+  font-size: clamp(0.875rem, calc(14 * var(--vw)), 1.25rem);
+  font-weight: 400;
+}
+
+.xsmall-text {
+  font-size: clamp(0.5rem, calc(12 * var(--vw)), 0.75rem);
+  font-weight: 400;
+}

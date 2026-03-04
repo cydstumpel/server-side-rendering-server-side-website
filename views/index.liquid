@@ -1,16 +1,20 @@
-<section class="homepage-header">
-  <h1>{{ dummyData.homepageHeader.title }}</h1>
-  <p>{{ dummyData.homepageHeader.description }}</p>
+{% layout 'base.liquid' %}
 
-  {% include 'partials/button.liquid', href: '/meer-info', text: 'Meer info', variant: 'secondary' %}
-</section>
+{% block content %}
+  <section class="homepage-header">
+    <h1>{{ dummyData.homepageHeader.title }}</h1>
+    <p>{{ dummyData.homepageHeader.description }}</p>
 
-<h1>FDND Links</h1>
+    {% include 'partials/button.liquid', href: '/meer-info', text: 'Meer info', variant: 'secondary' %}
+  </section>
 
-<ul>
-  {% for link in links %}
+<section class="links">
+  <ul>
+    {% for link in links %}
     <li>
       {% include 'partials/link-card.liquid', link: link %}
     </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

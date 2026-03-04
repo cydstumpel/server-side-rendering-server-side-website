@@ -1,19 +1,24 @@
-
-
 <div class="link-card">
-  <a href="{{ link.url }}">{{ link.title }}</a>
-  <p>
-    Submitted by {% include 'partials/email.liquid', email: link.email %}
+  <h2 class="medium-heading">
+    <a href="{{ link.url }}">
+      {{ link.title }}
+    </a>
+  </h2>
+  <p class="xsmall-text">
+    Submitted by {% include 'partials/email.liquid', email: link.email %}, on {{ link.date_created | date: '%d-%m-%Y %H:%M' }}
   </p>
-  <p>
-    Submitted on {{ link.date_created | date: '%d-%m-%Y %H:%M' }}
-  </p>
-  <p>
-    Votes <sup>{{ link.votes.size }}</sup>
-  </p>
-  {% for vote in link.votes %}
-  <p>
-    {% include 'partials/email.liquid', email: vote.email %}
-  </p>
-  {% endfor %}
+  {% comment %} Dit zou ook een component kunnen zijn: {% endcomment %}
+  <div class="link-card-votes">
+    <h2 class="small-heading">
+      Votes <sup>{{ link.votes.size }}</sup>
+    </h2>
+    <p class="small-text">
+      Upvoted by:
+    </p>
+    <ul>
+      {% for vote in link.votes %}
+        {% include 'partials/email.liquid', email: vote.email %}
+      {% endfor %}
+    </ul>
+  </div>
 </div>

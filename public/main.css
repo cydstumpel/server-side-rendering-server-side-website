@@ -1,0 +1,46 @@
+@import 'typography.css';
+
+
+@import 'partials/header.css';
+@import 'partials/homepage-header.css';
+@import 'partials/links.css';
+
+
+@import 'partials/button.css';
+@import 'partials/link-card.css';
+@import 'partials/email.css';
+
+
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+:root {
+  --padding-block: clamp(1rem, 2vw, 2rem);
+  --padding-inline: clamp(1rem, 2vw, 2rem);
+  --padding-card: 1rem;
+  
+  --color-dark: #000;
+  --color-light: #fff;
+  --vw: 1440/100 * 1vw;
+}
+
+a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.label {
+  display: inline-block;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}

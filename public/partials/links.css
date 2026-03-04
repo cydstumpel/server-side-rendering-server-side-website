@@ -1,0 +1,7 @@
+.links {
+  padding: var(--padding-block) var(--padding-inline);
+  ul {
+    list-style-type: '';
+    padding: 0;
+  }
+}
